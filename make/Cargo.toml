@@ -1,0 +1,9 @@
+[package]
+name = "codebook"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.80"
+regex = "1.9.6"
+# notify = "8.0.0"

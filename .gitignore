@@ -1,9 +1,2 @@
-# lualatex
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.pdf
-*.synctex(busy)'
-*.toc
+# others
+*.swp

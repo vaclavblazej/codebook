@@ -1,0 +1,7 @@
+[
+  {
+    "alias": "run",
+    "rel_path": "./.cmd/scripts/run.sh",
+    "description": ""
+  }
+]

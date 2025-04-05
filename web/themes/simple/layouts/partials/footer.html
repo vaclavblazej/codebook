@@ -1,0 +1,8 @@
+{{ with .Site.Copyright }}
+  <span>{{ . }}</span>
+{{ end }}
+{{ if not .Site.Params.hideMadeWithLine }}
+  <span>
+    {{ if .Site.Copyright }}|{{ end }}
+  </span>
+{{ end }}
