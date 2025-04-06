@@ -13,9 +13,9 @@ Preparation checklist:
 [coding environment](setup),
 [custom template](template),
 [input & output](io),
-[compiling & running](run),
-[problemsolving checklist](checklist),
-[common techniques](techniques).
+[compiling & running](run).
+<!-- [problemsolving checklist](checklist), -->
+<!-- [common techniques](techniques). -->
 
 ---
 
@@ -216,6 +216,8 @@ You don't need `array` (use global arrays instead) nor `list` (use `vector` or `
 \code(data_structures/fenwick.cpp,fenwick)
 
 Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add and remove (direct indexing, change value by +1/-1), with $O(\log^2 n)$ query (binary search the position).
+
+\code(data_structures/segment_tree.cpp,segtree)
 
 \code(data_structures/lca.cpp,lca)
 

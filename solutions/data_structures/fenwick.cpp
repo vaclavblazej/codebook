@@ -2,6 +2,8 @@
 /**
  * Author: Václav Blažej
  * License: CC0
+ * History:
+ *   2025-04-05 Added Fenwick tree
  */
 
 
@@ -15,7 +17,8 @@
 struct Fenwick{
 	vector<ll> fw;
 	Fenwick(ll N) : fw(N+1,0) {};
-	ll prefsum(ll n) { // exclusive
+	ll prefsum(ll n) { // inclusive
+		n++;
 		ll sum = 0;
 		while (n > 0) {
 			sum += fw[n];
@@ -25,14 +28,14 @@ struct Fenwick{
 	}
 	void update(ll n, ll v) {
 		n++;
-		while (n <= fw.size()) {
+		while (n < fw.size()) {
 			fw[n] += v;
 			n += lsb(n);
 		}
 	}
 	// optional functions below
 	ll sum_range(ll i, ll j) { // inclusive
-		return prefsum(j+1) - prefsum(i);
+		return prefsum(j) - prefsum(i-1);
 	}
 	Fenwick(vector<ll> &a) : fw(a.size()+1, 0) {
 		for(ll i=0; i<a.size(); ++i) {
