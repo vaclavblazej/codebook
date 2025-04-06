@@ -23,7 +23,7 @@ jobs:
       - name: Build Rust
         run: |
           cd make
-          cargo build --verbose
+          cargo build --release
 
       - name: Run Rust Project to Generate Content
         run: |
