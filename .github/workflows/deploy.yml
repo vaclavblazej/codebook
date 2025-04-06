@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  CARGO_TERM_COLOR: always
+
 permissions:
   contents: read
   pages: write
@@ -15,17 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set Up Rust
-        uses: actions/setup-rust@v1
-        with:
-          rust-version: stable
-
-      - name: Build Rust Project
+      - name: Build Rust
         run: |
           cd make
-          cargo build --release
+          cargo build --verbose
 
       - name: Run Rust Project to Generate Content
         run: |
