@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>The Book of Code</title><link>https://vaclavblazej.github.io/codebook/</link><description>Recent content on The Book of Code</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://vaclavblazej.github.io/codebook/index.xml" rel="self" type="application/rss+xml"/><item><title>Language &amp; Style</title><link>https://vaclavblazej.github.io/codebook/language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vaclavblazej.github.io/codebook/language/</guid><description>Many languages are used by teams for competitive programming but c++ enjoys the widest adoption, hence, this book uses c++ as the main language. However, there are a few (somewhat rare) cases where other languages may provide significantly shorter solutions.
+expression evaluation python eval big integers java BigInteger python native Code style Aim of the code style in the book is to be unambiguous and short. Whitespaces are added for clarity and are omitted to express tightly linked meaning.</description><content:encoded><![CDATA[<p>Many languages are used by teams for competitive programming but <code>c++</code> enjoys the widest adoption, hence, this book uses <code>c++</code> as the main language.
+However, there are a few (somewhat rare) cases where other languages may provide significantly shorter solutions.</p>
+<ul>
+<li>expression evaluation
+<ul>
+<li>python <code>eval</code></li>
+</ul>
+</li>
+<li>big integers
+<ul>
+<li>java <code>BigInteger</code></li>
+<li>python native</li>
+</ul>
+</li>
+</ul>
+<h2 id="code-style">Code style</h2>
+<p>Aim of the code style in the book is to be unambiguous and short.
+Whitespaces are added for clarity and are omitted to express tightly linked meaning.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Indentation_style#K&amp;R">K&amp;R style</a> brackets to use less lines while clearly marking span of the block</li>
+<li><code>for</code>, <code>while</code>, etc. with no curly brackets <code>{}</code> contain the expression on the same line to avoid errors through line insertion</li>
+<li>generally one line per expression but expressions that strongly belong to each other may occupy the same line</li>
+<li>custom structures are capitalized</li>
+<li>for clarity, spaces around assignment operators <code>=</code>, <code>+=</code>, <code>*=</code> etc. (except inside <code>for</code>), colon <code>:</code> in <code>for</code>, brackets after <code>while</code>, <code>if</code>, <code>for</code></li>
+<li>space after <code>,</code> in parameter lists; can be left out of constructors <code>{a,b}</code> as values have tightly linked meaning</li>
+<li>optional spaces around boolean and integer operators to convey logical meaning <code>a+b*b == c+(x==q)</code></li>
+<li>expressions can be spread over multiple lines and have extra spaces to mark important similarities</li>
+<li>line comments <code>//</code> can occupy separate lines or have two spaces before and one after double slash</li>
+</ul>
+<p>For purely typesetting reasons the code is indented with tabs.
+Tabs are displayed with 4 spaces for clarity.
+Any extra padding to display aligned code is done with spaces.</p>
+<p>Number of symbols on a line is generally limited to 50.
+In cases where long lines considerably improve clarity the line length is limited to 100.</p>
+
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#f92672">--</span>t) {
+</span></span><span style="display:flex;"><span>	...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (ll <span style="color:#f92672">&amp;</span>el : a) cin <span style="color:#f92672">&gt;&gt;</span> el;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (ll i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>N; <span style="color:#f92672">++</span>i) {
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span>Res<span style="color:#f92672">&gt;</span> func(Graph <span style="color:#f92672">&amp;</span>g, ll start) {
+</span></span><span style="display:flex;"><span>	ll N <span style="color:#f92672">=</span> g.size();
+</span></span><span style="display:flex;"><span>	vector<span style="color:#f92672">&lt;</span>Res<span style="color:#f92672">&gt;</span> res(N, {<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,INF});  <span style="color:#75715e">// previous, cost
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	res[start] <span style="color:#f92672">=</span> {start,<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span>	priority_queue<span style="color:#f92672">&lt;</span>El<span style="color:#f92672">&gt;</span> q;
+</span></span><span style="display:flex;"><span>	q.push({start,<span style="color:#ae81ff">0</span>});
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty()) {
+</span></span><span style="display:flex;"><span>		El el <span style="color:#f92672">=</span> q.top(); q.pop();
+</span></span><span style="display:flex;"><span>		ll id <span style="color:#f92672">=</span> el.id;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (todo[x<span style="color:#f92672">+</span>y] <span style="color:#f92672">&amp;&amp;</span> todo[x<span style="color:#f92672">+</span>z]
+</span></span><span style="display:flex;"><span>		 <span style="color:#f92672">||</span> todo[x<span style="color:#f92672">-</span>y] <span style="color:#f92672">&amp;&amp;</span> todo[x<span style="color:#f92672">-</span>z]) {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> e : g[id]) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">if</span> (ne <span style="color:#f92672">&lt;</span> res[v].len) {
+</span></span><span style="display:flex;"><span>					q.push({v,ne});
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> res;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h3 id="rules-of-thumb">Rules of thumb</h3>
+<p>While the following techniques are short, they may be confusing to people that are less familiar with the language.
+We replace left expression with the equivalent right expression for clarity.</p>
+<p>Forget operator as rhs.</p>
+<div class="multicols">
+<div class="col50">
+
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">return</span> e.process(), f;</span></span></code></pre></div>
+</div>
+<div class="col50">
+
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>e.process();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> f;</span></span></code></pre></div>
+</div>
+</div>
+]]></content:encoded></item><item><title>Template</title><link>https://vaclavblazej.github.io/codebook/template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vaclavblazej.github.io/codebook/template/</guid><description>Template is part of code that is included at the beginning of all written solutions. The following is the general template used in this book. As taste is coder-specific we opt to use a minimal template.
+template.h,template
+#include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; typedef long long ll; typedef double ld; You may want to create your own template to fit your needs and style. Consider using snippets and autocompletion instead of a complex template if you code on a machine you can configure.</description><content:encoded><![CDATA[<p>Template is part of code that is included at the beginning of all written solutions.
+The following is the general template used in this book.
+As taste is coder-specific we opt to use a minimal template.</p>
+<p>template.h,template</p>
+
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">double</span> ld;</span></span></code></pre></div>
+<p>You may want to create your own template to fit your needs and style.
+Consider using <em>snippets</em> and <em>autocompletion</em> instead of a complex template if you code on a machine you can configure.</p>
+<p>The following commands are some of the more popular ones.</p>
+<p>template_extended.h,all</p>
+
+
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span> pll;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> vi;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define FOR(i,a,b) for(int i=(a); i&lt;(b); ++i) </span><span style="color:#75715e">// sometimes called REP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define F0R(i,a) FOR(i,0,a)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define F(a) FOR(i,a)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define FF(a) FOR(j,a)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ROF(i,a,b) for (int i = (b)-1; i &gt;= (a); i--)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define R0F(i,a) ROF(i,0,a)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define PB push_back
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ff first
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ss second
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ALL(x) begin(x), end(x)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> ld PI <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>atan((ld)<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// the following needs to be changed accordingly!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> ll MOD <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e9</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> ll EPS <span style="color:#ae81ff">1e-10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> ll INF <span style="color:#ae81ff">1ll</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">62</span>;</span></span></code></pre></div>
+]]></content:encoded></item></channel></rss>
