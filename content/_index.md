@@ -23,6 +23,26 @@ The following [template](template) is assumed in all of the codes within this bo
 
 \code(template.h,template)
 
+### C++ standard library functions
+
+<tt>
+<table>
+<tr><th> function call </th><th> complexity </th><th> meaning </th></tr>
+
+<tr><td> sort(a.begin(), a.end()) </td><td> $O(N \log N)$ </td><td> sorts the array increasingly </td></tr>
+<tr><td colspan=2> sort(s.begin(), s.end(), greater&lt;ll&gt;()); </td><td> ... decreasingly </td></tr>
+<tr><td colspan=2> sort(s.begin(), s.end(), custom); </td><td> custom sorting </td></tr>
+<tr><td colspan=3> struct { bool operator()(int a, int b) const { return a < b; } } custom; </td></tr>
+
+<tr><td> swap(a, b)    </td><td> $O(1)$           </td><td> swaps elements </td></tr>
+<tr><td> iota(a.begin(), a.end(), val) </td><td> $O(N)$ </td><td> fills with gradually increasing ++val </td></tr>
+<tr><td> reverse(a.begin(), a.end()) </td><td> $O(N)$ </td><td> reverses contents of the array </td></tr>
+<tr><td> rotate(a.begin(), a.end(), shift) </td><td> $O(N)$ </td><td> left shifts contesnts of the array </td></tr>
+<tr><td> tie(a1, ..., aN) </td><td> $O(N)$ </td><td> return elements as a lhs tuple (allows assignment) </td></tr>
+
+</table>
+</tt>
+
 ### C++ standard library data structures
 
 <tt>
@@ -62,6 +82,17 @@ The following [template](template) is assumed in all of the codes within this bo
 <tr><td> multimap&lt;K,V&gt; </td><td colspan=4> key-value pairs, iterable by sorted keys, has all the same operations as set<V>, but all behave slightly differently</td><tr>
 <tr><td> unordered_map&lt;V&gt;, unordered_multimap </td><td colspan=4> variants which use hash_tables instead of search trees, this makes operations faster $O(1)$, but disables sorted iterating; there is no find, lower_bound, upper_bound</td><tr>
 
+<tr><td> stack&lt;V&gt;  </td><td colspan=4> last in first out, (is a deque wrapper) </td></tr>
+<tr><td></td><td> push(V)         </td><td> --        </td><td> $O(1)$      </td><td> = push_back() </td></tr>
+<tr><td></td><td> top()           </td><td> V         </td><td> $O(1)$      </td><td> = back() </td></tr>
+<tr><td></td><td> pop()           </td><td> --        </td><td> $O(1)$      </td><td> = pop_back() </td></tr>
+
+<tr><td> queue&lt;V&gt;  </td><td colspan=4> first in first out, (is a deque wrapper) </td></tr>
+<tr><td></td><td> push(V)         </td><td> --        </td><td> $O(1)$      </td><td> = push_back() </td></tr>
+<tr><td></td><td> front()         </td><td> V         </td><td> $O(1)$      </td><td>  </td></tr>
+<tr><td></td><td> back()          </td><td> V         </td><td> $O(1)$      </td><td>  </td></tr>
+<tr><td></td><td> pop()           </td><td> --        </td><td> $O(1)$      </td><td> = pop_front() </td></tr>
+
 <tr><td> deque&lt;V&gt;  </td><td colspan=4> double-ended queue, quick access to beginning and end} </td></tr>
 <tr><td></td><td> push_front(V)  </td><td> --        </td><td> $O(1)$      </td><td>  </td></tr>
 <tr><td></td><td> front()        </td><td> V         </td><td> $O(1)$      </td><td>  </td></tr>
@@ -70,22 +101,15 @@ The following [template](template) is assumed in all of the codes within this bo
 <tr><td></td><td> back()         </td><td> V         </td><td> $O(1)$      </td><td>  </td></tr>
 <tr><td></td><td> pop_back()     </td><td> --        </td><td> $O(1)$      </td><td>  </td></tr>
 
-<tr><td> queue&lt;V&gt;  </td><td colspan=4> first in first out, (is a deque wrapper) </td></tr>
-<tr><td></td><td> push(V)         </td><td> --        </td><td> $O(1)$      </td><td> = push_back() </td></tr>
-<tr><td></td><td> front()         </td><td> V         </td><td> $O(1)$      </td><td>  </td></tr>
-<tr><td></td><td> back()          </td><td> V         </td><td> $O(1)$      </td><td>  </td></tr>
-<tr><td></td><td> pop()           </td><td> --        </td><td> $O(1)$      </td><td> = pop_front() </td></tr>
-
-<tr><td> stack&lt;V&gt;  </td><td colspan=4> last in first out, (is a deque wrapper) </td></tr>
-<tr><td></td><td> push(V)         </td><td> --        </td><td> $O(1)$      </td><td> = push_back() </td></tr>
-<tr><td></td><td> top()           </td><td> V         </td><td> $O(1)$      </td><td> = back() </td></tr>
-<tr><td></td><td> pop()           </td><td> --        </td><td> $O(1)$      </td><td> = pop_back() </td></tr>
-
 <tr><td> priority_queue&lt;V&gt; </td><td colspan=4> constant time lookup of the largest element </td></tr>
 <tr><td></td><td colspan=4> minimal pq = priority_queue&lt;V,vector&lt;V&gt;,greater&lt;V&gt;&gt;  </td></tr>
 <tr><td></td><td> push(V)       </td><td> --        </td><td> $O(\log N)$  </td><td>  </td></tr>
 <tr><td></td><td> top()         </td><td> V         </td><td> $O(1)$       </td><td>  </td></tr>
 <tr><td></td><td> pop()         </td><td> --        </td><td> $O(\log N)$  </td><td>  </td></tr>
+
+<tr><td> string </td><td colspan=4> array of characters </td></tr>
+<tr><td></td><td> substr(start)        </td><td> string </td><td> $O({\rm len}-{\rm start})$  </td><td> suffix of a string </td></tr>
+<tr><td></td><td> substr(start, count) </td><td> string </td><td> $O({\rm count})$  </td><td> substring between [start, start+count) </td></tr>
 
 </table>
 </tt>
@@ -93,8 +117,9 @@ The following [template](template) is assumed in all of the codes within this bo
 Most of the above structures support the following functions.
 
 * number of elements: `empty()`, `size()`,
-* iterators: `begin()`, `end()`, `rbegin()`, `rend()`,
-* reseting the structure: `clear()`,
+* resetting the structure: `clear()`,
+* iterators: `begin()` and `end()`, (for reversed `rbegin()` and `rend()`),
+* accessing the elements: `operator[]` or `at`.
 
 Beware of using `lower_bound` and `upper_bound` on iterators -- it takes $O(N)$ time!
 
@@ -183,11 +208,27 @@ You don't need `array` (use global arrays instead) nor `list` (use `vector` or `
 </div>
 </div>
 
-## Arrays and sequences
+## Primes, Factorization, and Divisors
 
-\code(arrays/sort/default_library_sort.cpp,base)
+\code(math/primes.cpp,eratosthenes)
+\code(math/primes.cpp,factorization)
+\code(math/primes.cpp,sumdivisors)
+\code(math/divisors.cpp,divisors)
 
-\code(arrays/sort/counting_sort.cpp,csort)
+\code(math/gcd.cpp,shortgcdlcm)
+\code(math/gcd.cpp,extendedgcd)
+
+## Combinatorics & Modular arithmetic
+
+All modular functions require a global prime `mod`.
+
+```cpp
+const ll mod = 1000000007ll; // prime
+ll d(ll n) { return n%mod; }
+```
+
+\code(math/modular_arithmetics.cpp,powmod)
+\code(math/modular_arithmetics.cpp,combmod)
 
 ## Searches
 
@@ -211,6 +252,8 @@ You don't need `array` (use global arrays instead) nor `list` (use `vector` or `
 </div>
 </div>
 
+## Baisc range queries
+
 \code(arrays/array_sum.cpp,array_sum)
 
 \code(data_structures/fenwick.cpp,fenwick)
@@ -219,8 +262,11 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 
 \code(data_structures/segment_tree.cpp,segtree)
 
+## Graphs & Trees
+
 \code(data_structures/lca.cpp,lca)
 
+## Dynamic programming
 
 <div class="multicols">
 <div class="col50">
@@ -230,4 +276,8 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 \code(data_structures/dynamic_programming.cpp,dp)
 </div>
 </div>
+
+## Arrays and sequences
+
+\code(arrays/sort/counting_sort.cpp,csort)
 
