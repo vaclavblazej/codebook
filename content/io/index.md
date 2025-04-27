@@ -5,6 +5,7 @@
 * `c`-style `scanf` and `printf` -- fast, a bit harder to write
 
 When a problem requires to read input which is big then we may be forced to use faster input reading method (e.g. [CF 463C Gargari and Bishops](https://codeforces.com/problemset/problem/463/C)).
+Read more on [USACO: Input & Output](https://usaco.guide/general/input-output) and [USACO: Fast Inpyt & Output](https://usaco.guide/general/fast-io).
 
 ## Cin & cout
 
@@ -47,13 +48,13 @@ string line;
 getline(cin, line);
 ```
 
-
-The following code speeds up `cin`, `cout` by breaking synchronization.
+The following code speeds up io by breaking synchronization.
 One should *not* use `scanf`, `printf` if this is applied.
+Moreover, for interactive problems one needs to be careful to *flush* the output.
 
 ```cpp
-ios_base::sync_with_stdio(0); // disables C and C++ i/o synchronization
-cin.tie(0);                   // disables cin and cout synchronization
+ios_base::sync_with_stdio(false); // disables C and C++ i/o synchronization
+cin.tie(nullptr);                 // disables cin and cout synchronization
 ```
 
 ## Scanf & printf

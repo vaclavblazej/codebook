@@ -26,7 +26,7 @@ ll lcm(ll a, ll b) {
 /** extendedgcd
  * Title: Extended Euclidean algorithm
  * Description: Additionally to `gcd` it also computes $x,y$ such that
- * $ax+by={\rm gcd}(a,b)$, i.e., Bézout's coefficients.
+ * $ a\cdot x + b \cdot y = {\rm gcd}(a,b)$, i.e., Bézout's coefficients.
  * Time: $O(\log(a+b))$
  */
 tuple<ll,ll,ll> egcd(ll a, ll b) {
@@ -39,7 +39,7 @@ tuple<ll,ll,ll> egcd(ll a, ll b) {
 		tie(olds, s) = tuple(s, olds - q*s);
 		tie(oldt, t) = tuple(t, oldt - q*t);
 	}
-	return tie(oldr, olds, oldt);
+	return tuple(oldr, olds, oldt);
 }
 /// extendedgcd
 

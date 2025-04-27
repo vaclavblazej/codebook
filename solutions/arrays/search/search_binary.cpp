@@ -7,6 +7,7 @@
  */
 
 /** lsearch
+ * Title: Binary search
  * Description: Low is one above FALSE, high is on TRUE.
  */
 ll bsearch(ll low, ll high, bool(*cmp)(ll)){
@@ -36,8 +37,9 @@ ld bsearch(ld low, ld high, bool(*cmp)(ld)){
 
 ll M;
 
-// comp
-// example comparison function
+/** comp
+ * Description: example comparison function
+ */
 bool comp(ll val){
 	return (val*(val+1))/2 >= M;
 }

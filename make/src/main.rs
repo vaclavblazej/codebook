@@ -132,8 +132,11 @@ fn load_code(code_folder: &Path, filepath: &PathBuf, part: String) -> anyhow::Re
 }
 
 fn replace(code_folder: &Path, content: &str) -> anyhow::Result<String> {
+    let todos = Regex::new(r"\\todo\([^\)]+\)\n").unwrap();
+    let res_1 = todos.replace_all(content, |_: &regex::Captures| { "" });
+    let res_1_str = String::from(res_1);
     let pattern = Regex::new(r"\\code\((?P<filepath>[^\)]+),(?P<part>[^\)]+)\)").unwrap();
-    let result = pattern.replace_all(content, |caps: &regex::Captures| {
+    let res_2 = pattern.replace_all(&res_1_str, |caps: &regex::Captures| {
         let filepath = caps.name("filepath").expect("the \\code command requires filepath as an argument").as_str();
         println!("found match {}", filepath);
         let part: Option<regex::Match> = caps.name("part");
@@ -160,7 +163,8 @@ fn replace(code_folder: &Path, content: &str) -> anyhow::Result<String> {
             format!("error replacing {:?}", filepath)
         }
     });
-    Ok(String::from(result))
+    let res_2_str = String::from(res_2);
+    Ok(res_2_str)
 }
 
 fn process(code_folder: &Path, target_path: &PathBuf, file: &PathBuf) -> anyhow::Result<()> {

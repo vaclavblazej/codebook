@@ -6,16 +6,16 @@ This text is a quick competitive programming reference for `c++` coders.
 The most useful material is contained here.
 [Follow links]() to see discussion, examples, and references.
 
-Preparation checklist:
-[about this document & basic terminology](about),
+Before reading, be sure to know about
+[this document & basic terminology](about),
 [competitive programming](comprog),
 [coding language & style](language),
 [coding environment](setup),
-[custom template](template),
+[custom templates](template),
 [input & output](io),
 [compiling & running](run).
 <!-- [problemsolving checklist](checklist), -->
-<!-- [common techniques](techniques). -->
+<!-- [list of techniques](techniques). -->
 
 ---
 
@@ -23,7 +23,13 @@ The following [template](template) is assumed in all of the codes within this bo
 
 \code(template.h,template)
 
-### C++ standard library functions
+{{< toc >}}
+
+# Introduction
+
+## Quick reference
+
+### Standard library functions
 
 <tt>
 <table>
@@ -37,13 +43,13 @@ The following [template](template) is assumed in all of the codes within this bo
 <tr><td> swap(a, b)    </td><td> $O(1)$           </td><td> swaps elements </td></tr>
 <tr><td> iota(a.begin(), a.end(), val) </td><td> $O(N)$ </td><td> fills with gradually increasing ++val </td></tr>
 <tr><td> reverse(a.begin(), a.end()) </td><td> $O(N)$ </td><td> reverses contents of the array </td></tr>
-<tr><td> rotate(a.begin(), a.end(), shift) </td><td> $O(N)$ </td><td> left shifts contesnts of the array </td></tr>
+<tr><td> rotate(a.begin(), a.begin()+shift, a.end()) </td><td> $O(N)$ </td><td> left shifts contesnts of the array </td></tr>
 <tr><td> tie(a1, ..., aN) </td><td> $O(N)$ </td><td> return elements as a lhs tuple (allows assignment) </td></tr>
 
 </table>
 </tt>
 
-### C++ standard library data structures
+### Standard library data structures
 
 <tt>
 <table>
@@ -59,7 +65,7 @@ The following [template](template) is assumed in all of the codes within this bo
 <tr><td>               </td><td> resize(size,def) </td><td> --             </td><td> size          </td><td>   </td></tr>
 
 <tr><td> set&lt;V&gt; </td><td colspan=4> collection of unique keys, iterable by sorted keys </td></tr>
-<tr><td>               </td><td> insert(V)      </td><td> pair<it,ok> </td><td> $O(\log N)$ </td><td> was inserted? </td></tr>
+<tr><td>               </td><td> insert(V)      </td><td> pair<it,ok> </td><td> $O(\log N)$ </td><td> pair(it, was inserted?) </td></tr>
 <tr><td>               </td><td> find(V)        </td><td> it          </td><td> $O(\log N)$ </td><td> not found => end </td></tr>
 <tr><td>               </td><td> lower_bound(V) </td><td> it          </td><td> $O(\log N)$ </td><td> finds first $\ge$      </td></tr>
 <tr><td>               </td><td> upper_bound(V) </td><td> it          </td><td> $O(\log N)$ </td><td> finds first $>$       </td></tr>
@@ -114,20 +120,12 @@ The following [template](template) is assumed in all of the codes within this bo
 </table>
 </tt>
 
-Most of the above structures support the following functions.
-
 * number of elements: `empty()`, `size()`,
 * resetting the structure: `clear()`,
 * iterators: `begin()` and `end()`, (for reversed `rbegin()` and `rend()`),
 * accessing the elements: `operator[]` or `at`.
 
-Beware of using `lower_bound` and `upper_bound` on iterators -- it takes $O(N)$ time!
-
-Structures as `set`, `map`, and function `sort` uses `bool operator<(const S &s)const` to compare elements.
-
-You don't need `array` (use global arrays instead) nor `list` (use `vector` or `deque`).
-
-### Ascii Table
+### Ascii table
 
 <div class="multicols">
 <div class="col50">
@@ -208,6 +206,36 @@ You don't need `array` (use global arrays instead) nor `list` (use `vector` or `
 </div>
 </div>
 
+### Numerical constants
+
+| SYMBOL (`c++`)                    | value                                   |
+| -------------------------------   | -------                                 |
+| Chapernowne's n.                  | $0.12345678910111213141516171819202122$ |
+| $\log_{10}2$                      | $0.30102999566398119521373889472449302$ |
+| Catalan's c.                      | $0.91596559417721901505460351493238411$ |
+| $\zeta(3)$                        | $1.20205690315959428539973816151144999$ |
+| $\ln \pi$                         | $1.14472988584940017414342735135305871$ |
+| $\sqrt{2}$                        | $1.41421356237309504880168872420969807$ |
+| $\log_2{3}$                       | $1.58496250072115618145373894394781650$ |
+| $\phi$ (gold.r.) `=(1+sqrt(5))/2` | $1.61803398874989484820458683436563811$ |
+| $\zeta(2)=\pi/6$                  | $1.64493406684822643647241516664602518$ |
+| $\sqrt{3}$                        | $1.73205080756887729352744634150587236$ |
+| $\sqrt{\pi}$                      | $1.77245385090551602729816748334114518$ |
+| $\sqrt{5}$                        | $2.23606797749978969640917366873127623$ |
+| $\sqrt{2\pi}$                     | $2.50662827463100050241576528481104525$ |
+| $\sqrt{7}$                        | $2.64575131106459059050161575363926042$ |
+| Hilbert's n. $2^{\sqrt 2}$        | $2.66514414269022518865029724987313984$ |
+| $e$                               | $2.71828182845904523536028747135266249$ |
+| $\pi$ `=M_PI`, `=4*atan(1.)`      | $3.14159265358979323846264338327950288$ |
+| $\sqrt{10}$                       | $3.16227766016837933199889354443271853$ |
+| $\sqrt{11}$                       | $3.31662479035539984911493273667068668$ |
+| $\log_2{10}$                      | $3.32192809488736234787031942948939017$ |
+| $2 \pi=\tau$                      | $6.28318530717958647692528676655900576$ |
+| $\pi^2$                           | $9.86960440108935861883449099987615113$ |
+| $\pi^e$                           | $22.4591577183610454734271522045437350$ |
+| $e^\pi$                           | $23.1406926327792690057290863679485473$ |
+
+
 ## Primes, Factorization, and Divisors
 
 \code(math/primes.cpp,eratosthenes)
@@ -220,15 +248,27 @@ You don't need `array` (use global arrays instead) nor `list` (use `vector` or `
 
 ## Combinatorics & Modular arithmetic
 
-All modular functions require a global prime `mod`.
+Many modular functions require a global prime `mod`.
 
 ```cpp
 const ll mod = 1000000007ll; // prime
 ll d(ll n) { return n%mod; }
 ```
 
+\todo(chinese remainder theorem)
+
 \code(math/modular_arithmetics.cpp,powmod)
 \code(math/modular_arithmetics.cpp,combmod)
+
+### Binomial identities
+
+[Pascal's identity](https://en.wikipedia.org/wiki/Pascal%27s_rule)
+$\binom {n-1}{k-1} + \binom {n-1}k = \binom nk$
+
+[Hockey-stick identity](https://en.wikipedia.org/wiki/Hockey-stick_identity)
+$\binom kk + \binom {k+1}k + \dots + \binom {n-1}k + \binom nk = \binom{n+1}{k+1}$
+
+$\sum_{k=0}^n \binom nk = 2^n$
 
 ## Searches
 
@@ -252,7 +292,7 @@ ll d(ll n) { return n%mod; }
 </div>
 </div>
 
-## Baisc range queries
+## Simple range queries
 
 \code(arrays/array_sum.cpp,array_sum)
 
@@ -262,22 +302,54 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 
 \code(data_structures/segment_tree.cpp,segtree)
 
-## Graphs & Trees
+# Basics
 
-\code(data_structures/lca.cpp,lca)
+\todo(## Arrays)
 
-## Dynamic programming
+## Trees
 
-<div class="multicols">
-<div class="col50">
-\code(data_structures/dynamic_programming.cpp,basis)
-</div>
-<div class="col50">
-\code(data_structures/dynamic_programming.cpp,dp)
-</div>
-</div>
+\code(trees/lca.cpp,lca)
 
-## Arrays and sequences
+## Graphs
 
-\code(arrays/sort/counting_sort.cpp,csort)
+\code(data_structures/unionfind.cpp,unionfind)
+\code(graphs/spanning_tree.cpp,kruskal)
+\code(graphs/spanning_tree.cpp,prim)
+
+\todo(## Interval updates)
+
+\todo(lazy segment tree)
+
+## Strings
+
+\todo(regex)
+
+\todo(strings/kmp.cpp,kmp)
+
+\todo(hashing)
+\todo(edit distance)
+\todo(suffix array, lcp)
+\todo(palindrome)
+
+\code(strings/aho-corasick.cpp,aho-corasick)
+
+## Geometry
+
+\code(geometry/basics.cpp,basics)
+\code(geometry/basics.cpp,point)
+
+\todo(lines)
+\todo(segments)
+\todo(circles)
+\todo(rotating calipers)
+
+\todo(# Advanced)
+
+\todo(hld)
+
+\todo(## 3D Geometry)
+
+# Other
+
+\code(graphs/cycle_trees.cpp,cycletrees)
 

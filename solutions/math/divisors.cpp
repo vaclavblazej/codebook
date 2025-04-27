@@ -7,7 +7,7 @@
  */
 
 /** divisors
- * Title: Divisors
+ * Title: List of divisors
  * Description: Returns a list of sorted divisors of $n$.
  * Time: $\sqrt{n}$
  */

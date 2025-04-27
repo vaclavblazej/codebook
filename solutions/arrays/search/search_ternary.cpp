@@ -4,7 +4,8 @@
 #define INF (1ll<62)
 #define EPS 1e-8
 /** ternary
- * Find extrem (minimum in this case) in convex function.
+ * Title: Ternary search
+ * Description: Find extrem (minimum) for a convex function.
  */
 ll ternary(ll mn, ll mx, ll(*getVal)(ll)){
 	ll low=mn, high=mx, lm, hm, last=INF;

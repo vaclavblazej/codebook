@@ -31,7 +31,7 @@ ll modinv(ll b) {
 /// powmod
 
 /** combmod
- * Title: Combinations (in modulo)
+ * Title: Combinations in modulo
  * Description: After calling `precompute` value `F[i]` is the factorial of `i`,
  * and `I[i]` is the inverse of the factorial of `i`. This allows us to compute
  * combination number in constant time. Requires *modinv*.

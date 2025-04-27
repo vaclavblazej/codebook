@@ -2,9 +2,27 @@
 title = "About"
 +++
 
-This document presents short and efficient implementations of standard techniques used in [competitive programming](../comprog).
-The main page serves as a quick overview usable during a contest (online ones).
+This document presents short and efficient implementations of standard techniques used in competitive programming.
+The main page serves as a quick overview usable during contests -- online as a website or offline as a printout.
 The main page contains links that lead to offshoot pages that bluntly introduce the concepts and list references for more detailed explanations.
+
+## Competitive Programming
+
+Read a task, think of a correct solution, correctly code the solution.
+This summarizes what solving a single competitive programming task consists of.
+Want to know more?: [USACO](https://usaco.guide/general/intro-cp), [Wikpedia](https://en.wikipedia.org/wiki/Competitive_programming)
+
+## Structure of the Book
+
+We divide the content into chapters based on difficulty level.
+It is assumed one is familiar with `c++`, or is at least able to find the relevant [documentation](https://en.cppreference.com/w/).
+
+* Introduction - Contains useful overview and rudimentary algorithms. (0-1400)
+* Basics - Goes through many common topics and for each lists the main algorithms. (1400-1900)
+* Advanced - More complex techniques that are either quite hard or are combining several structures together. (1900+)
+* Other - Techniques that do not appear often. (1600+)
+
+---
 
 ## Used notation
 
@@ -19,12 +37,14 @@ For comprehensive explanations refer to books:
     * available on https://cses.fi/book.pdf
 * Competitive Programming v4 (Book 1 and Book 2)
     * official page https://cpbook.net/ however no link to download
-
-We also acknowledge existence of other sources.
-
+* [USACO Guide](https://usaco.guide/)
 * e-maxx's algorithm collection
     * originally in Russian http://e-maxx.ru/algo/
-    * English translation is available on GitHub https://github.com/e-maxx-eng/e-maxx-eng
+    * cp-algorithms: English translation is available on GitHub https://github.com/cp-algorithms/cp-algorithms
+
+We also acknowledge existence of other resources.
+
+* list of resources [USACO](https://usaco.guide/general/resources-cp)
 * Morass's list of problems by concepts https://codeforces.com/blog/-Morass-
 
 ## Inspiration

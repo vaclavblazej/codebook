@@ -7,7 +7,7 @@
  */
 
 /** segtree
- * Title: Range minimum query & element set
+ * Title: Range minimum query & element set (segment tree)
  * Description: Short segment tree with only set element and
  * range minimum query for inclusive-exclusive range [l, r).
  * Time: set $O(\log n)$, sum $O(\log n)$

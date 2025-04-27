@@ -8,7 +8,7 @@
 
 
 /** fenwick
- * Title: Fenwick tree
+ * Title: Range sum query & element set (Fenwick tree)
  * Description: Quick update of single elements and range sum queries.
  * Time: $O(\log n)$ update, $O(\log n)$ prefsum, (optional) $O(n)$ create
  * (alt. insert one by one)

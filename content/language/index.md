@@ -3,7 +3,9 @@ title = "Language & Style"
 +++
 
 Many languages are used by teams for competitive programming but `c++` enjoys the widest adoption, hence, this book uses `c++` as the main language.
+Also see [USACO: Choosing a language](https://usaco.guide/general/choosing-lang).
 However, there are a few (somewhat rare) cases where other languages may provide significantly shorter solutions.
+
 
 * expression evaluation
 	* python `eval`
@@ -82,6 +84,25 @@ return e.process(), f;
 ```cpp
 e.process();
 return f;
+```
+
+</div>
+</div>
+
+Bitwise negation as a `-1` check.
+
+<div class="multicols">
+<div class="col50">
+
+```cpp
+if (~a) { ...
+```
+
+</div>
+<div class="col50">
+
+```cpp
+if (a != -1) { ...
 ```
 
 </div>

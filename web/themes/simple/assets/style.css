@@ -8,8 +8,8 @@
     /* Default (light) theme */
     --bg: #fff;
     --accent-bg: #f5f7ff;
-    --text: #212121;
-    --text-light: #585858;
+    --text: #000000;
+    --text-light: #333333;
     --border: #898EA4;
     --accent: #0d47a1;
     --accent-hover: #1266e2;
@@ -112,7 +112,8 @@ body > footer {
 
 /* Format headers */
 h1 {
-    font-size: 2rem;
+    font-family: cursive;
+    font-size: 3.1415926535rem;
 }
 
 h2 {
@@ -120,19 +121,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.6rem;
-}
-
-h4 {
-    font-size: 1.4rem;
-}
-
-h5 {
-    font-size: 1.0rem;
-}
-
-h6 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 p {
@@ -143,22 +132,6 @@ p {
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
     margin-bottom: .5em;
-}
-
-/* Reduce header size on mobile */
-@media only screen and (max-width: 720px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-    h2 {
-        font-size: 2.1rem;
-    }
-    h3 {
-        font-size: 1.75rem;
-    }
-    h4 {
-        font-size: 1.25rem;
-    }
 }
 
 /* Format links & buttons */
@@ -191,6 +164,7 @@ p {
 }
 
 ul {
+    padding-left: 1em;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -285,16 +259,6 @@ header > nav a[aria-current="true"] {
     cursor: pointer;
 }
 
-/* Reduce nav side on mobile */
-@media only screen and (max-width: 720px) {
-    header > nav a {
-        border: none;
-        padding: 0;
-        text-decoration: underline;
-        line-height: 1;
-    }
-}
-
 /* Consolidate box styling */
 aside, details, pre, progress {
     background-color: var(--accent-bg);
@@ -312,15 +276,6 @@ aside {
 }
 *[dir="rtl"] aside {
     float: left;
-}
-
-/* Make aside full-width on mobile */
-@media only screen and (max-width: 720px) {
-    aside {
-        width: 100%;
-        float: none;
-        margin-inline-start: 0;
-    }
 }
 
 article, fieldset, dialog {
@@ -508,26 +463,6 @@ input[type="radio"]:checked::after {
     font-size: 32px;
 }
 
-/* Makes input fields wider on smaller screens */
-@media only screen and (max-width: 720px) {
-    textarea,
-    select,
-    input {
-        width: 100%;
-    }
-}
-
-/* Set a height for color input */
-input[type="color"] {
-    height: 2.5rem;
-    padding:  0.2rem;
-}
-
-/* do not show border around file selector button */
-input[type="file"] {
-    border: 0;
-}
-
 /* Misc body elements */
 hr {
     border: none;
@@ -673,12 +608,6 @@ dialog::backdrop {
     opacity: 0.8;
 }
 
-@media only screen and (max-width: 720px) {
-    dialog {
-        max-width: calc(100vw - 2rem);
-    }
-}
-
 /* Superscript & Subscript */
 /* Prevent scripts from affecting line-height. */
 sup, sub {
@@ -807,3 +736,38 @@ div.multicols {
 div.col50 {
     flex-grow: 1;
 }
+
+main h1 {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-column-gap: 10px;
+    align-items: center;
+}
+
+main h1:after, main h1:before {
+    content: " ";
+    border-bottom: 2px solid var(--accent);
+    border-top: 2px solid var(--accent);
+    height: 12px;
+    background-color: #ccc;
+}
+
+main h2 {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 4fr max-content 100fr;
+    grid-template-rows: 27px 0;
+    grid-column-gap: 4px;
+    align-items: center;
+}
+
+main h2:after, main h2:before {
+    content: " ";
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #ccc;
+    height: 4px;
+    background-color: #ccc;
+}
+

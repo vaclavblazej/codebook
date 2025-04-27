@@ -15,7 +15,7 @@ ll LOG=30; // must be more than log2(par.size())
 struct LCA {
 	ll N;
 	vector<vector<ll>> dp; // binary lifting
-	vector<ll> depth; // depth
+	vector<ll> depth;
 	LCA(vector<ll> &par) : N(par.size()),
 	depth(N, 1), dp(N, vector<ll>(LOG, -1)) {
 		for (ll i=0; i<N; ++i) dp[i][0] = par[i];

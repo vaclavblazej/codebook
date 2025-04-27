@@ -5,3 +5,9 @@ theme = 'simple'
 
 [markup.goldmark.renderer]
     unsafe = true # Allow HTML in md files
+
+[markup]
+    [markup.tableOfContents]
+        startLevel = 1
+        ordered = false
+        endLevel = 4

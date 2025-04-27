@@ -1,11 +1,11 @@
 // all
 typedef pair<ll, ll> pll;
 typedef vector<ll> vi;
-#define FOR(i,a,b) for(int i=(a); i<(b); ++i) // sometimes called REP
+#define FOR(i,a,b) for(ll i=(a); i<(b); ++i)
 #define F0R(i,a) FOR(i,0,a)
 #define F(a) FOR(i,a)
 #define FF(a) FOR(j,a)
-#define ROF(i,a,b) for (int i = (b)-1; i >= (a); i--)
+#define ROF(i,a,b) for (ll i = (b)-1; i >= (a); i--)
 #define R0F(i,a) ROF(i,0,a)
 #define PB push_back
 #define ff first
