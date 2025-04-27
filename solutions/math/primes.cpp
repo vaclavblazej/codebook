@@ -8,7 +8,7 @@
  */
 
 /** eratosthenes
- * Title: Sieve of Eratosthenes
+ * Title: Find prime numbers (Sieve of Eratosthenes)
  * Description: Computes the biggest factor for every number from 1 to `upto-1`.
  * Returns the sorted list of primes from 1 to `upto-1`.
  * Time: $O(n \log \log n)$

@@ -1,3 +1,6 @@
++++
+title = 'Input & output'
++++
 
 `c++` has two ways to process input and output.
 

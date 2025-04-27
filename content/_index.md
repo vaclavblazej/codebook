@@ -8,7 +8,6 @@ The most useful material is contained here.
 
 Before reading, be sure to know about
 [this document & basic terminology](about),
-[competitive programming](comprog),
 [coding language & style](language),
 [coding environment](setup),
 [custom templates](template),
@@ -170,7 +169,7 @@ The following [template](template) is assumed in all of the codes within this bo
 
 | num | binary   | meaning     | num | binary   | meaning     |
 | --- | ------   | -------     | --- | ------   | -------     |
-| 64  | 01000000 | `@`         | 96  | 01000000 | ```         |
+| 64  | 01000000 | `@`         | 96  | 01000000 | (backtick)  |
 | 65  | 01000001 | `A`         | 97  | 01000001 | `a`         |
 | 66  | 01000010 | `B`         | 98  | 01000010 | `b`         |
 | 67  | 01000011 | `C`         | 99  | 01000011 | `c`         |
@@ -323,15 +322,15 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 ## Strings
 
 \todo(regex)
-
-\todo(strings/kmp.cpp,kmp)
-
 \todo(hashing)
+
+\code(strings/kmp.cpp,kmp)
+\code(strings/aho-corasick.cpp,aho-corasick)
+
 \todo(edit distance)
 \todo(suffix array, lcp)
-\todo(palindrome)
 
-\code(strings/aho-corasick.cpp,aho-corasick)
+\code(strings/palindrome.cpp,manacher)
 
 ## Geometry
 
