@@ -5,16 +5,18 @@
  * History:
  *   2025-04-10 Added eratosthenes and factorization
  *   2025-04-11 Added sumdivisors
+ *   2025-05-02 Added Euler's totient function
  */
 
 /** eratosthenes
  * Title: Find prime numbers (Sieve of Eratosthenes)
- * Description: Computes the biggest factor for every number from 1 to `upto-1`.
- * Returns the sorted list of primes from 1 to `upto-1`.
+ * Description: Computes the biggest factor for every number from 1 to `upto`.
+ * Returns the sorted list of primes from 1 to `upto`.
  * Time: $O(n \log \log n)$
  */
 vector<ll> fac; // highest prime factor of i
 vector<ll> erat(ll upto) {
+	++upto;
 	fac = vector<ll>(upto, 0);
 	vector<ll> primes;
 	fac[0] = fac[1] = 1;
@@ -29,7 +31,7 @@ vector<ll> erat(ll upto) {
 
 /** factorization
  * Title: Prime Factorization
- * Description: Requires *eratosthenes* to be run with `upto > n`.
+ * Description: Requires `eratosthenes` to be run with `upto >= n`.
  * Returns the vector of (factor, multiplicity) pairs sorted from the biggest.
  * Time: $O({\rm result})$
  */
@@ -47,20 +49,34 @@ vector<pair<ll,ll>> fact(ll n){
 }
 /// factorization
 
+/** totient
+ * Title: Euler's totient function
+ * Description: Returns the number of coprimes for $n$ smaller than $n$.
+ * Requires `factorization` and `eratosthenes` to be run with `upto >= n`.
+ */
+ll phi(ll n) {
+	vector<pair<ll,ll>> f = fact(n);
+	ll res = 1;
+	for (pair<ll,ll> p : f) {
+		res *= pow(p.first, p.second-1) * (p.first-1);
+	}
+	return res-1;
+}
+/// totient
 
 /** sumdivisors
  * Title: Sum of divisors
- * Description: Requires *factorzation* and *eratosthenes* to be run with `upto > n`.
- * Returns the total sum of all the divisors of $n$, including $1$ and $n$ itself.
+ * Description: Returns the total sum of all the divisors of $n$, including $1$ but excluding $n$.
+ * Requires `factorzation` and `eratosthenes` to be run with `upto >= n`.
  * Time: $O({\rm factorization})$
  */
 ll sumdivisors(ll n){
 	vector<pair<ll,ll>> f = fact(n);
-	ll res=1;
+	ll res = 1;
 	for (pair<ll,ll> p : f) {
 		res *= (pow(p.first,p.second+1)-1)/(p.first-1);
 	}
-	return res;
+	return res-n;
 }
 /// sumdivisors
 

@@ -24,8 +24,8 @@ ll N;
 string greet;
 cin >> N >> greet;
 vector<ll> a(N);
-for(ll &e : a) cin >> e;
-for(ll e : a) cout << e << ' ';
+for (ll &e : a) cin >> e;
+for (ll e : a) cout << e << ' ';
 cout << endl;
 ```
 
@@ -60,6 +60,16 @@ ios_base::sync_with_stdio(false); // disables C and C++ i/o synchronization
 cin.tie(nullptr);                 // disables cin and cout synchronization
 ```
 
+## Files
+
+We can change default input and output to be to files instead of standard input and output.
+This means one can code with `cin` and `cout` as normally by adding the following lines at the beginning of the main function.
+
+```cpp
+freopen("file.in","r",stdin);
+freopen("file.out","w",stdout);
+```
+
 ## Scanf & printf
 
 ```cpp
@@ -68,7 +78,7 @@ char greet[25];
 scanf("%lld%s", &N, greet);
 printf("%s", greet);
 vector<ll> a(N);
-for(ll &e : a) scanf("%lld", &e);
-for(ll e : a) printf("%lld ", e);
+for (ll &e : a) scanf("%lld", &e);
+for (ll e : a) printf("%lld ", e);
 printf("\n");
 ```

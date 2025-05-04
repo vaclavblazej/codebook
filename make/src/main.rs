@@ -4,16 +4,11 @@ use std::{env, path::{PathBuf, Path}};
 // use std::sync::mpsc;
 use regex::Regex;
 
+pub mod collection;
 pub mod file;
+pub mod model;
 
-#[derive(Debug, Default)]
-struct Snippet {
-    title: Option<String>,
-    time: Option<String>,
-    description: Option<String>,
-    content: String,
-    part: String,
-}
+use crate::model::Snippet;
 
 #[derive(Debug, PartialEq, Eq, Clone)]
 enum Property {

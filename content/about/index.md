@@ -12,6 +12,13 @@ Read a task, think of a correct solution, correctly code the solution.
 This summarizes what solving a single competitive programming task consists of.
 Want to know more?: [USACO](https://usaco.guide/general/intro-cp), [Wikpedia](https://en.wikipedia.org/wiki/Competitive_programming)
 
+## Base knowledge
+
+* [coding language & style](../language)
+* [coding environment](../setup)
+* [input & output](../io)
+* [compiling & running](../run)
+
 ## Structure of the Book
 
 We divide the content into chapters based on difficulty level.

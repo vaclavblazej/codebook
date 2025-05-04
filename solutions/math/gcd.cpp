@@ -27,6 +27,7 @@ ll lcm(ll a, ll b) {
  * Title: Extended Euclidean algorithm
  * Description: Additionally to `gcd` it also computes $x,y$ such that
  * $ a\cdot x + b \cdot y = {\rm gcd}(a,b)$, i.e., Bézout's coefficients.
+ * Returns `(gcd, x, y)`.
  * Time: $O(\log(a+b))$
  */
 tuple<ll,ll,ll> egcd(ll a, ll b) {
@@ -43,6 +44,8 @@ tuple<ll,ll,ll> egcd(ll a, ll b) {
 }
 /// extendedgcd
 
+#ifndef MAIN
+
 int main(){
 	ll a, b;
 	while (cin >> a >> b) {
@@ -55,3 +58,5 @@ int main(){
 	}
 	return 0;
 }
+
+#endif

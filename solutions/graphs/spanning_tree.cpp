@@ -16,7 +16,7 @@ namespace kruskal{
  * by merging components form shortest edges.
  * Sort can be replaced with radix/counting sort to get
  * better complexity with small weights.
- * Requires *union-find* data structure.
+ * Requires `union-find` data structure.
  */
 struct Edge{
     ll f, t, w;

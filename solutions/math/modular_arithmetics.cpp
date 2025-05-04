@@ -34,7 +34,7 @@ ll modinv(ll b) {
  * Title: Combinations in modulo
  * Description: After calling `precompute` value `F[i]` is the factorial of `i`,
  * and `I[i]` is the inverse of the factorial of `i`. This allows us to compute
- * combination number in constant time. Requires *modinv*.
+ * combination number in constant time. Requires `modinv`.
  * Time: precompute $O(2 \cdot upto)$, comb $O(1)$
  */
 ll d(ll n) { return n % mod; }

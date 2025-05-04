@@ -29,7 +29,7 @@
         --text: #dcdcdc;
         --text-light: #ababab;
         --accent: #ffb300;
-        --accent-hover: #ffe099;
+        --accent-hover: #666;
         --accent-text: var(--bg);
         --code: #f0a2a2;
         --preformatted: #ccc;
@@ -197,7 +197,7 @@ input[type="submit"]:enabled:hover,
 input[type="reset"]:enabled:hover,
 input[type="button"]:enabled:hover {
     background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
+    /* border-color: var(--accent-hover); */
     cursor: pointer;
 }
 
@@ -722,10 +722,23 @@ nav#TableOfContents > ul {
     fill: currentColor;
 }
 
+div.highlight {
+    position: relative;
+}
+
 div.highlight code,
 div.highlight pre,
 div.highlight pre span {
     color: inherit;
+}
+div.highlight button {
+    color: var(--accent);
+    border: 1px solid var(--text);
+    background: var(--bg);
+    padding: 4px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 div.multicols {

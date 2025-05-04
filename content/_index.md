@@ -8,13 +8,8 @@ The most useful material is contained here.
 
 Before reading, be sure to know about
 [this document & basic terminology](about),
-[coding language & style](language),
-[coding environment](setup),
-[custom templates](template),
-[input & output](io),
-[compiling & running](run).
+[list of techniques](techniques).
 <!-- [problemsolving checklist](checklist), -->
-<!-- [list of techniques](techniques). -->
 
 ---
 
@@ -169,38 +164,38 @@ The following [template](template) is assumed in all of the codes within this bo
 
 | num | binary   | meaning     | num | binary   | meaning     |
 | --- | ------   | -------     | --- | ------   | -------     |
-| 64  | 01000000 | `@`         | 96  | 01000000 | (backtick)  |
-| 65  | 01000001 | `A`         | 97  | 01000001 | `a`         |
-| 66  | 01000010 | `B`         | 98  | 01000010 | `b`         |
-| 67  | 01000011 | `C`         | 99  | 01000011 | `c`         |
-| 68  | 01000100 | `D`         | 100 | 01000100 | `d`         |
-| 69  | 01000101 | `E`         | 101 | 01000101 | `e`         |
-| 70  | 01000110 | `F`         | 102 | 01000110 | `f`         |
-| 71  | 01000111 | `G`         | 103 | 01000111 | `g`         |
-| 72  | 01001000 | `H`         | 104 | 01001000 | `h`         |
-| 73  | 01001001 | `I`         | 105 | 01001001 | `i`         |
-| 74  | 01001010 | `J`         | 106 | 01001010 | `j`         |
-| 75  | 01001011 | `K`         | 107 | 01001011 | `k`         |
-| 76  | 01001100 | `L`         | 108 | 01001100 | `l`         |
-| 77  | 01001101 | `M`         | 109 | 01001101 | `m`         |
-| 78  | 01001110 | `N`         | 110 | 01001110 | `n`         |
-| 79  | 01001111 | `O`         | 111 | 01001111 | `o`         |
-| 80  | 01010000 | `P`         | 112 | 01010000 | `p`         |
-| 81  | 01010001 | `Q`         | 113 | 01010001 | `q`         |
-| 82  | 01010010 | `R`         | 114 | 01010010 | `r`         |
-| 83  | 01010011 | `S`         | 115 | 01010011 | `s`         |
-| 84  | 01010100 | `T`         | 116 | 01010100 | `t`         |
-| 85  | 01010101 | `U`         | 117 | 01010101 | `u`         |
-| 86  | 01010110 | `V`         | 118 | 01010110 | `v`         |
-| 87  | 01010111 | `W`         | 119 | 01010111 | `w`         |
-| 88  | 01011000 | `X`         | 120 | 01011000 | `x`         |
-| 89  | 01011001 | `Y`         | 121 | 01011001 | `y`         |
-| 90  | 01011010 | `Z`         | 122 | 01011010 | `z`         |
-| 91  | 01011011 | `[`         | 123 | 01011011 | `{`         |
-| 92  | 01011100 | `\`         | 124 | 01011100 | (pipe)      |
-| 93  | 01011101 | `]`         | 125 | 01011101 | `}`         |
-| 94  | 01011110 | `^`         | 126 | 01011110 | `~`         |
-| 95  | 01011111 | `_`         | 127 | 01011111 | `DEL`       |
+| 64  | 01000000 | `@`         | 96  | 01100000 | (backtick)  |
+| 65  | 01000001 | `A`         | 97  | 01100001 | `a`         |
+| 66  | 01000010 | `B`         | 98  | 01100010 | `b`         |
+| 67  | 01000011 | `C`         | 99  | 01100011 | `c`         |
+| 68  | 01000100 | `D`         | 100 | 01100100 | `d`         |
+| 69  | 01000101 | `E`         | 101 | 01100101 | `e`         |
+| 70  | 01000110 | `F`         | 102 | 01100110 | `f`         |
+| 71  | 01000111 | `G`         | 103 | 01100111 | `g`         |
+| 72  | 01001000 | `H`         | 104 | 01101000 | `h`         |
+| 73  | 01001001 | `I`         | 105 | 01101001 | `i`         |
+| 74  | 01001010 | `J`         | 106 | 01101010 | `j`         |
+| 75  | 01001011 | `K`         | 107 | 01101011 | `k`         |
+| 76  | 01001100 | `L`         | 108 | 01101100 | `l`         |
+| 77  | 01001101 | `M`         | 109 | 01101101 | `m`         |
+| 78  | 01001110 | `N`         | 110 | 01101110 | `n`         |
+| 79  | 01001111 | `O`         | 111 | 01101111 | `o`         |
+| 80  | 01010000 | `P`         | 112 | 01110000 | `p`         |
+| 81  | 01010001 | `Q`         | 113 | 01110001 | `q`         |
+| 82  | 01010010 | `R`         | 114 | 01110010 | `r`         |
+| 83  | 01010011 | `S`         | 115 | 01110011 | `s`         |
+| 84  | 01010100 | `T`         | 116 | 01110100 | `t`         |
+| 85  | 01010101 | `U`         | 117 | 01110101 | `u`         |
+| 86  | 01010110 | `V`         | 118 | 01110110 | `v`         |
+| 87  | 01010111 | `W`         | 119 | 01110111 | `w`         |
+| 88  | 01011000 | `X`         | 120 | 01111000 | `x`         |
+| 89  | 01011001 | `Y`         | 121 | 01111001 | `y`         |
+| 90  | 01011010 | `Z`         | 122 | 01111010 | `z`         |
+| 91  | 01011011 | `[`         | 123 | 01111011 | `{`         |
+| 92  | 01011100 | `\`         | 124 | 01111100 | (pipe)      |
+| 93  | 01011101 | `]`         | 125 | 01111101 | `}`         |
+| 94  | 01011110 | `^`         | 126 | 01111110 | `~`         |
+| 95  | 01011111 | `_`         | 127 | 01111111 | `DEL`       |
 
 </div>
 </div>
@@ -239,11 +234,13 @@ The following [template](template) is assumed in all of the codes within this bo
 
 \code(math/primes.cpp,eratosthenes)
 \code(math/primes.cpp,factorization)
+\code(math/primes.cpp,totient)
 \code(math/primes.cpp,sumdivisors)
 \code(math/divisors.cpp,divisors)
 
 \code(math/gcd.cpp,shortgcdlcm)
 \code(math/gcd.cpp,extendedgcd)
+\code(math/chinese.cpp,remainder)
 
 ## Combinatorics & Modular arithmetic
 
@@ -303,8 +300,6 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 
 # Basics
 
-\todo(## Arrays)
-
 ## Trees
 
 \code(trees/lca.cpp,lca)
@@ -315,6 +310,7 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 \code(graphs/spanning_tree.cpp,kruskal)
 \code(graphs/spanning_tree.cpp,prim)
 
+\todo(## Arrays)
 \todo(## Interval updates)
 
 \todo(lazy segment tree)
@@ -351,4 +347,5 @@ Fenwick can be used to keep sorted set of small elements with $O(\log n)$ add an
 # Other
 
 \code(graphs/cycle_trees.cpp,cycletrees)
+\code(graphs/bipartite.cpp,bipartite)
 
